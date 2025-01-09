@@ -17,15 +17,9 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 #define Base        0
-#define Media       1
-#define Nav         2
-#define Mouse       3
-#define Sym         4
-#define Num         5
-#define Fun         6
-#define Button      7
-#define Game        8
-#define Gameplus    9
+#define Nav         1
+#define Sym         2
+#define Fun         3
 
 &mt {
     quick-tap-ms = <100>;
@@ -70,16 +64,6 @@
         >;
     };
 
-    Media {
-        label = "Media";
-        bindings = <
-                &trans    &trans    &trans     &trans      &trans               &trans            &trans             &trans           &trans      &trans  
-                &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHIFT  &trans               &trans    &kp C_PREVIOUS  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_NEXT  
-        &trans  &trans    &trans    &trans     &trans      &trans               &trans            &trans             &trans           &trans      &trans  &trans
-                                    &trans     &trans      &tog 8           &kp C_STOP  &kp C_PLAY_PAUSE             &trans  
-        >;
-    };
-
     Nav {
         label = "Nav";
         bindings = <
@@ -87,16 +71,6 @@
                 &kp LEFT_GUI  &kp LALT  &kp LCTRL  &kp LSHIFT  &kp SQT                    &kp CAPS   &kp LEFT       &kp DOWN       &kp UP    &kp RIGHT  
         &trans  &kp LEFT      &kp DOWN  &kp UP     &kp RIGHT   &kp C_PLAY_PAUSE         &kp INSERT   &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP      &kp END  &trans
                                         &trans     &trans      &trans                   &kp DELETE  &kp ENTER         &trans
-        >;
-    };
-
-    Mouse {
-        label = "Mouse";
-        bindings = <
-                &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  
-                &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  
-        &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                                &trans  &trans  &trans          &trans  &trans  &trans
         >;
     };
 
@@ -110,16 +84,6 @@
         >;
     };
 
-    Num {
-        label = "Num";
-        bindings = <
-                &kp LEFT_BRACKET  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp RIGHT_BRACKET       &trans      &trans     &trans    &trans    &trans  
-                &kp SEMICOLON     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp EQUAL               &trans  &kp RSHIFT  &kp RCTRL  &kp RALT  &kp RGUI  
-        &trans  &kp GRAVE         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BACKSLASH           &trans      &trans     &trans    &trans    &trans  &trans
-                                                &kp SQT       &kp NUMBER_0  &kp MINUS               &trans      &trans     &trans
-        >;
-    };
-
     Fun {
         label = "Fun";
         bindings = <
@@ -127,36 +91,6 @@
                 &kp F11     &kp F4   &kp F5      &kp F6   &kp SCROLLLOCK           &trans  &kp RSHIFT  &kp RCTRL  &kp RALT  &kp RGUI  
         &trans  &kp F10     &kp F1   &kp F2      &kp F3   &kp PAUSE_BREAK          &trans      &trans     &trans    &trans    &trans  &trans
                                      &kp C_MENU  &kp TAB  &kp SPACE                &trans      &trans     &trans
-        >;
-    };
-
-    Button {
-        label = "Button";
-        bindings = <
-                &bt BT_CLR         &bootloader  &trans     &trans      &bt BT_SEL 0         &trans      &trans     &trans  &bootloader    &trans  
-                &kp LGUI           &kp LALT     &kp LCTRL  &kp LSHIFT  &bt BT_SEL 1         &trans  &kp RSHIFT  &kp RCTRL     &kp RALT  &kp RGUI  
-        &trans  &ext_power EP_TOG  &trans       &trans     &trans      &bt BT_SEL 2         &trans      &trans     &trans       &trans    &trans  &trans
-                                                &trans     &trans      &trans               &trans      &trans     &trans
-        >;
-    };
-
-    Game {
-        label = "Game";
-        bindings = <
-                &kp TAB         &kp Z  &kp X       &kp C         &kp V            &trans  &trans  &trans  &trans  &trans  
-                &kp LEFT_SHIFT  &kp Q  &kp W       &kp E         &kp R            &trans  &trans  &trans  &trans  &trans  
-        &trans  &kp LCTRL       &kp A  &kp S       &kp D         &kp F            &trans  &trans  &trans  &trans  &trans  &trans
-                                       &kp LALT    &lt 9 ESCAPE  &kp SPACE        &trans  &trans  &trans
-        >;
-    };
-
-    Gameplus {
-        label = "Gameplus";
-        bindings = <
-                &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5        &trans  &trans  &trans  &trans  &trans  
-                &kp G         &trans        &trans        &trans        &kp T               &trans  &trans  &trans  &trans  &trans  
-        &trans  &kp TAB       &trans        &trans        &trans        &kp B               &trans  &trans  &trans  &trans  &trans  &trans
-                                            &kp ESCAPE    &trans        &tog 8              &trans  &trans  &trans
         >;
     };
   };
